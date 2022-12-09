@@ -1,8 +1,9 @@
 #include <stdio.h>
+
 /**
- * main - print a line of code using printf
- *
- * Return : 0
+ * main - prints the phrase with proper grammer,
+ * but the outcome is a piece of art,
+ * Return: 0 if exited properly,non-zero otherwise
  */
 int main(void)
 {
