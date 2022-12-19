@@ -2,20 +2,19 @@ include "main.h"
 
 /**
  * print_rev -> printing a string in reverse
- * @s: the string to be printed in rev
+ *
+ * @s: string parameter input
+ *
+ * Return: Nothing
  */
 
 void print_rev(char *s)
 {
-	int i, n;
+	int index;
 
-	n = 0;
-	while (s[n] != '\0')
-		n++;
-
-	for (i = n - 1; i >= 0; i--)
-	{
-		_putchar(s[i]);
-	}
+	for (index = 0; s[index] != '\0'; ++index)
+		;
+	for (--index; index >= 0; --index)
+		_putchar(s[index]);
 	_putchar('\n');
-}
+
