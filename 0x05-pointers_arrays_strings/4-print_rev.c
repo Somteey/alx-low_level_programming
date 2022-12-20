@@ -1,7 +1,7 @@
 include "main.h"
 
 /**
- * print_rev -> printing a string in reverse
+ * print_rev - prints a string in reverse
  *
  * @s: string parameter input
  *
@@ -17,4 +17,5 @@ void print_rev(char *s)
 	for (--index; index >= 0; --index)
 		_putchar(s[index]);
 	_putchar('\n');
+}
 
