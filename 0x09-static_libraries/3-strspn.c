@@ -1,41 +1,31 @@
 #include "main.h"
-
 /**
- * _strcmp - Function which compare two strings and
- * @s1: first string
- * @s2:second string
- * Return:
- *	returns zero if s1 == s2
- *	returns negative number if s1 < s2
- *	returns positive number if s1 > s2
- */
-
-int _strcmp(char *s1, char *s2)
+*_strspn - search the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*@s:segment targeted
+*@accept:reference bytes container
+*
+*Return:returns the number of bytes in the initial
+* segment of s which consist only of bytes from accept
+*/
+unsigned int _strspn(char *s, char *accept)
 {
-	int i = 0, diff = 0;
+	unsigned int bytes = 0;
+	int i;
 
-	while (1)
+	while (*s)
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			break;
-		else if (s1[i] == '\0')
+		for (i = 0; accept[i]; i++)
 		{
-			diff = s2[i];
-			break;
+			if (accept[i] == *s)
+			{
+				bytes++;
+				break;
+			}
+			else if ((accept[i + 1]) == '\0')
+				return (bytes);
 		}
-		else if (s2[i] == '\0')
-		{
-			diff = s1[i];
-			break;
-		}
-		else if (s1[i] != s2[i])
-		{
-			diff = s1[i] - s2[i];
-			break;
-		}
-		else
-			i++;
-
+		s++;
 	}
-	return (diff);
+	return (bytes);
 }
